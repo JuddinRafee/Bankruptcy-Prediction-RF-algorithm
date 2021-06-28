@@ -1,0 +1,36 @@
+{% extends "layout1.html" %}
+{% block content %}
+<!-- Banner
+			<section id="banner"  >
+				<div class="inner">
+					<h1>WELCOME TO  <span>BANKRUPTCY PREDICTION SYSTEM<br />
+					everything is easy</span></h1>
+					<ul class="actions">
+						<li><a href="#" class="button alt">Get Started</a></li>
+					</ul>
+				</div>
+			</section>-->
+
+<!-- One-->
+<section id="one">
+	<div class="inner">
+		<header>
+			<h1>Category Your Own Model Prediction</h1>
+		</header>
+		<p>In this category you need to prepare those financial ratios : </p>
+		<div class="row">
+			<div class="column">
+				<ul>
+					<li>Please make sure your data's attributes is same as your training data's attribute excluding "target"</li>
+			</div>
+
+		</div>
+		<p>Then put all the data in csv file :</p>
+		<ul class="actions">
+			<li><a href="{{ url_for('insertDataOwn')}}" class="button alt">Proceed</a></li>
+		</ul>
+	</div>
+</section>
+
+
+{% endblock %}

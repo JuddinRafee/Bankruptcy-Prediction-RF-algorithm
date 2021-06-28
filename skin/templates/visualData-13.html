@@ -1,0 +1,39 @@
+{% extends "layout1.html" %}
+{% block content %}
+<div class="inner">
+	<header>
+		<h1>Category 4 : 13 attributes</h1>
+	</header>
+</div>
+<section id="one">
+	<div class="inner">
+		<header>
+			<center><h3>Prediction Data Visualization</h3></center>
+		</header>
+        <article>
+            <div class="content">
+                <form action="{{ url_for('plotData13') }}" method="POST" enctype = "multipart/form-data">
+                    <label for="variables">Choose attribute you want to display:</label>
+                    <select id="variables" name="variables">
+                        <option value="Attr1">[(cash + short-term securities + receivables - short-term liabilities) / (operating expenses - depreciation)] * 365</option>
+                        <option value="Attr2">retained earnings / total assets</option>
+                        <option value="Attr3">sales / total assets</option>
+                        <option value="Attr4">(gross profit + depreciation) / sales</option>
+                        <option value="Attr5">(gross profit + depreciation) / total liabilities</option>
+                        <option value="Attr6">(equity - share capital) / total assets</option>
+                        <option value="Attr7">(net profit + depreciation) / total liabilities</option>
+                        <option value="Attr8">profit on operating activities / financial expenses</option>
+                        <option value="Attr9">logarithm of total assets</option>
+                        <option value="Attr10">operating expenses / total liabilities</option>
+                        <option value="Attr11">profit on sales / sales</option>
+                        <option value="Attr12">(current assets - inventory) / short-term liabilities</option>
+                        <option value="Attr13">total costs /total sales</option>
+                    </select>
+                    <br>
+                    <input type="submit" value="Display Graph" class="btn btn-secondary ">
+                </form>
+            </div>
+        </article>
+	</div>
+</section>
+{% endblock %}

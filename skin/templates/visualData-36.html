@@ -1,0 +1,62 @@
+{% extends "layout1.html" %}
+{% block content %}
+<div class="inner">
+	<header>
+		<h1>Category 3 : 36 attributes</h1>
+	</header>
+</div>
+<section id="one">
+	<div class="inner">
+		<header>
+			<center><h3>Prediction Data Visualization</h3></center>
+		</header>
+        <article>
+            <div class="content">
+                <form action="{{ url_for('plotData36') }}" method="POST" enctype = "multipart/form-data">
+                    <label for="variables">Choose attribute you want to display:</label>
+                    <select id="variables" name="variables">
+                        <option value="Attr1">total liabilities / total assets</option>
+                        <option value="Attr2">[(cash + short-term securities + receivables - short-term liabilities) / (operating expenses - depreciation)] * 365</option>
+                        <option value="Attr3">retained earnings / total assets</option>
+                        <option value="Attr4">sales / total assets</option>
+                        <option value="Attr5">gross profit / short-term liabilities</option>
+                        <option value="Attr6">(gross profit + depreciation) / sales</option>
+                        <option value="Attr7">(total liabilities * 365) / (gross profit + depreciation)</option>
+                        <option value="Attr8">(gross profit + depreciation) / total liabilities</option>
+                        <option value="Attr9">total assets / total liabilities</option>
+                        <option value="Attr10">(inventory * 365) / sales</option>
+                        <option value="Attr11">net profit / sales</option>
+                        <option value="Attr12">gross profit (in 3 years) / total assets</option>
+                        <option value="Attr13">(equity - share capital) / total assets</option>
+                        <option value="Attr14">(net profit + depreciation) / total liabilities</option>
+                        <option value="Attr15">profit on operating activities / financial expenses</option>
+                        <option value="Attr16">logarithm of total assets</option>
+                        <option value="Attr17">(total liabilities - cash) / sales</option>
+                        <option value="Attr18">(current liabilities * 365) / cost of products sold</option>
+                        <option value="Attr19">operating expenses / total liabilities</option>
+                        <option value="Attr20">profit on sales / total assets</option>
+                        <option value="Attr21">(current assets - inventories) / long-term liabilities</option>
+                        <option value="Attr22">profit on sales / sales</option>
+                        <option value="Attr23">total liabilities / ((profit on operating activities + depreciation) * (12/365))</option>
+                        <option value="Attr24">profit on operating activities / sales</option>
+                        <option value="Attr25">net profit / inventory</option>
+                        <option value="Attr26">(current assets - inventory) / short-term liabilities</option>
+                        <option value="Attr27">EBITDA (profit on operating activities - depreciation) / total assets</option>
+                        <option value="Attr28">EBITDA (profit on operating activities - depreciation) / sales</option>
+                        <option value="Attr29">current assets / total liabilities</option>
+                        <option value="Attr30">equity / fixed assets</option>
+                        <option value="Attr31">working capital</option>
+                        <option value="Attr32">(current assets - inventory - short-term liabilities) / (sales - gross profit - depreciation)</option>
+                        <option value="Attr33">total costs /total sales</option>
+                        <option value="Attr34">long-term liabilities / equity</option>
+                        <option value="Attr35">sales / receivables</option>
+                        <option value="Attr36">(short-term liabilities *365) / sales</option>
+                    </select>
+                    <br>
+                    <input type="submit" value="Display Graph" class="btn btn-secondary ">
+                </form>
+            </div>
+        </article>
+	</div>
+</section>
+{% endblock %}

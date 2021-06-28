@@ -1,0 +1,242 @@
+{% extends "layout.html" %}
+{% block content %}
+<style>
+	#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)}
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 100px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+.info {
+  background-color: #e7f3fe;
+  border-left: 6px solid #2196F3;
+}
+</style>
+<div class="inner">
+	<header>
+		<h1>Category 1 : 64 attributes</h1>
+	</header>
+</div>
+<section id="one">
+	<div class="inner">
+		<header>
+			<center><h3>Prediction Data Visualization</h3></center>
+		</header>
+        <article>
+            <div class="content">
+                <form action="{{ url_for('plotData64') }}" method="POST" enctype = "multipart/form-data">
+                    <label for="variables">Choose attribute you want to display:</label>
+                    <select id="variables" name="variables">
+                        <option value="Attr1">net profit / total assets</option>
+                        <option value="Attr2">total liabilities / total assets</option>
+                        <option value="Attr3">working capital / total assets</option>
+                        <option value="Attr4">current assets / short-term liabilities</option>
+                        <option value="Attr5">[(cash + short-term securities + receivables - short-term liabilities) / (operating expenses - depreciation)] * 365</option>
+                        <option value="Attr6">retained earnings / total assets</option>
+                        <option value="Attr7">EBIT / total assets</option>
+                        <option value="Attr8">book value of equity / total liabilities</option>
+                        <option value="Attr9">sales / total assets</option>
+                        <option value="Attr10">equity / total assets</option>
+                        <option value="Attr11">(gross profit + extraordinary items + financial expenses) / total assets</option>
+                        <option value="Attr12">gross profit / short-term liabilities</option>
+                        <option value="Attr13">(gross profit + depreciation) / sales</option>
+                        <option value="Attr14">(gross profit + interest) / total assets</option>
+                        <option value="Attr15">(total liabilities * 365) / (gross profit + depreciation)</option>
+                        <option value="Attr16">(gross profit + depreciation) / total liabilities</option>
+                        <option value="Attr17">total assets / total liabilities</option>
+                        <option value="Attr18">gross profit / total assets</option>
+                        <option value="Attr19">gross profit / sales</option>
+                        <option value="Attr20">(inventory * 365) / sales</option>
+                        <option value="Attr21">sales (n) / sales (n-1)</option>
+                        <option value="Attr22">profit on operating activities / total assets</option>
+                        <option value="Attr23">net profit / sales</option>
+                        <option value="Attr24">gross profit (in 3 years) / total assets</option>
+                        <option value="Attr25">(equity - share capital) / total assets</option>
+                        <option value="Attr26">(net profit + depreciation) / total liabilities</option>
+                        <option value="Attr27">profit on operating activities / financial expenses</option>
+                        <option value="Attr28">working capital / fixed assets</option>
+                        <option value="Attr29">logarithm of total assets</option>
+                        <option value="Attr30">(total liabilities - cash) / sales</option>
+                        <option value="Attr31">(gross profit + interest) / sales</option>
+                        <option value="Attr32">(current liabilities * 365) / cost of products sold</option>
+                        <option value="Attr33">operating expenses / short-term liabilities</option>
+                        <option value="Attr34">operating expenses / total liabilities</option>
+                        <option value="Attr35">profit on sales / total assets</option>
+                        <option value="Attr36">total sales / total assets</option>
+                        <option value="Attr37">(current assets - inventories) / long-term liabilities</option>
+                        <option value="Attr38">constant capital / total assets</option>
+                        <option value="Attr39">profit on sales / sales</option>
+                        <option value="Attr40">(current assets - inventory - receivables) / short-term liabilities</option>
+                        <option value="Attr41">total liabilities / ((profit on operating activities + depreciation) * (12/365))</option>
+                        <option value="Attr42">profit on operating activities / sales</option>
+                        <option value="Attr43">rotation receivables + inventory turnover in days</option>
+                        <option value="Attr44">(receivables * 365) / sales</option>
+                        <option value="Attr45">net profit / inventory</option>
+                        <option value="Attr46">(current assets - inventory) / short-term liabilities</option>
+                        <option value="Attr47">(inventory * 365) / cost of products sold</option>
+                        <option value="Attr48">EBITDA (profit on operating activities - depreciation) / total assets</option>
+                        <option value="Attr49">EBITDA (profit on operating activities - depreciation) / sales</option>
+                        <option value="Attr50">current assets / total liabilities</option>
+                        <option value="Attr51">short-term liabilities / total assets</option>
+                        <option value="Attr52">(short-term liabilities * 365) / cost of products sold)</option>
+                        <option value="Attr53">equity / fixed assets</option>
+                        <option value="Attr54">constant capital / fixed assets </option>
+                        <option value="Attr55">working capital</option>
+                        <option value="Attr56">(sales - cost of products sold) / sales</option>
+                        <option value="Attr57">(current assets - inventory - short-term liabilities) / (sales - gross profit - depreciation)</option>
+                        <option value="Attr58">total costs /total sales</option>
+                        <option value="Attr59">long-term liabilities / equity</option>
+                        <option value="Attr60">sales / inventory</option>
+                        <option value="Attr61">sales / receivables</option>
+                        <option value="Attr62">(short-term liabilities *365) / sales</option>
+                        <option value="Attr63">sales / short-term liabilities</option>
+                        <option value="Attr64">sales / fixed assets</option>
+                    </select>
+                    <br>
+                    <input type="submit" value="Display Graph" class="btn btn-secondary ">
+                </form>
+            </div>
+        </article>
+	</div>
+</section>
+<section id="two">
+	<div class="inner">
+		<article class="alt">
+			<div class="content">
+				<div class="image fit">
+					<img id="myImg" src="static/images/imageResult64.png" alt="Comparison of Bankruptcy Prediction Result in bar chart" />
+				</div>
+				<div class="info">
+					<p><b>Base on the figure above you can analyzed the comparison between bankrupt and not bankrupt prediction result of the companies.</b></p>
+				</div>
+
+			</div>
+		</article>
+		<article class="alt">
+			<div class="content">
+				<div class="image fit">
+					<img id="myImg1" src="static/images/imageLineResult64.png" alt="Comparison of Bankruptcy Prediction Result in line chart" />
+				</div>
+				<div class="info">
+					<p><b>Base on the figure above you can analyzed and detect pattern between Bankrupt and Not Bankrupt prediction result of the companies.</b></p>
+				</div>
+
+			</div>
+		</article>
+	</div>
+</section>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+var img = document.getElementById("myImg1");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+</script>
+{% endblock %}

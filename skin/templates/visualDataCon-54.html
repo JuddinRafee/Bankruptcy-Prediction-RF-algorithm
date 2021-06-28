@@ -1,0 +1,95 @@
+{% extends "layout1.html" %}
+{% block content %}
+<div class="inner">
+    <br>
+	<header>
+		<h1>Category 1 : 54 attributes</h1>
+	</header>
+</div>
+<section id="one">
+	<div class="inner">
+		<header>
+			<center><h3>Prediction Data Visualization</h3></center>
+		</header>
+        <article>
+            <div class="content">
+                <form action="{{ url_for('plotData54') }}" method="POST" enctype = "multipart/form-data">
+                    <label for="variables">Choose attribute you want to display:</label>
+                    <select id="variables" name="variables">
+                        <option value="Attr1">total liabilities / total assets</option>
+                        <option value="Attr2">current assets / short-term liabilities</option>
+                        <option value="Attr3">[(cash + short-term securities + receivables - short-term liabilities) / (operating expenses - depreciation)] * 365</option>
+                        <option value="Attr4">retained earnings / total assets</option>
+                        <option value="Attr5">book value of equity / total liabilities</option>
+                        <option value="Attr6">sales / total assets</option>
+                        <option value="Attr7">equity / total assets</option>
+                        <option value="Attr8">(gross profit + extraordinary items + financial expenses) / total assets</option>
+                        <option value="Attr9">gross profit / short-term liabilities</option>
+                        <option value="Attr10">(gross profit + depreciation) / sales</option>
+                        <option value="Attr11">(gross profit + interest) / total assets</option>
+                        <option value="Attr12">(total liabilities * 365) / (gross profit + depreciation)</option>
+                        <option value="Attr13">(gross profit + depreciation) / total liabilities</option>
+                        <option value="Attr14">total assets / total liabilities</option>
+                        <option value="Attr15">gross profit / total assets</option>
+                        <option value="Attr16">gross profit / sales</option>
+                        <option value="Attr17">(inventory * 365) / sales</option>
+                        <option value="Attr18">net profit / sales</option>
+                        <option value="Attr19">gross profit (in 3 years) / total assets</option>
+                        <option value="Attr20">(equity - share capital) / total assets</option>
+                        <option value="Attr21">(net profit + depreciation) / total liabilities</option>
+                        <option value="Attr22">profit on operating activities / financial expenses</option>
+                        <option value="Attr23">working capital / fixed assets</option>
+                        <option value="Attr24">logarithm of total assets</option>
+                        <option value="Attr25">(total liabilities - cash) / sales</option>
+                        <option value="Attr26">(current liabilities * 365) / cost of products sold</option>
+                        <option value="Attr27">operating expenses / total liabilities</option>
+                        <option value="Attr28">profit on sales / total assets</option>
+                        <option value="Attr29">total sales / total assets</option>
+                        <option value="Attr30">(current assets - inventories) / long-term liabilities</option>
+                        <option value="Attr31">constant capital / total assets</option>
+                        <option value="Attr32">profit on sales / sales</option>
+                        <option value="Attr33">(current assets - inventory - receivables) / short-term liabilities</option>
+                        <option value="Attr34">total liabilities / ((profit on operating activities + depreciation) * (12/365))</option>
+                        <option value="Attr35">profit on operating activities / sales</option>
+                        <option value="Attr36">(receivables * 365) / sales</option>
+                        <option value="Attr37">net profit / inventory</option>
+                        <option value="Attr38">(current assets - inventory) / short-term liabilities</option>
+                        <option value="Attr39">EBITDA (profit on operating activities - depreciation) / total assets</option>
+                        <option value="Attr40">EBITDA (profit on operating activities - depreciation) / sales</option>
+                        <option value="Attr41">current assets / total liabilities</option>
+                        <option value="Attr42">short-term liabilities / total assets</option>
+                        <option value="Attr43">(short-term liabilities * 365) / cost of products sold)</option>
+                        <option value="Attr44">equity / fixed assets</option>
+                        <option value="Attr45">constant capital / fixed assets </option>
+                        <option value="Attr46">working capital</option>
+                        <option value="Attr47">(sales - cost of products sold) / sales</option>
+                        <option value="Attr48">(current assets - inventory - short-term liabilities) / (sales - gross profit - depreciation)</option>
+                        <option value="Attr49">total costs /total sales</option>
+                        <option value="Attr50">long-term liabilities / equity</option>
+                        <option value="Attr52">sales / inventory</option>
+                        <option value="Attr52">sales / receivables</option>
+                        <option value="Attr53">(short-term liabilities *365) / sales</option>
+                        <option value="Attr54">sales / short-term liabilities</option>
+                    </select>
+                    <br>
+                    <input type="submit" value="Display Graph" class="btn btn-secondary ">
+                </form>
+                <div class="image fit">
+					<img id="myImg1" src="static/images/imageLineData54.png"/>
+				</div>
+            </div>
+        </article>
+	</div>
+    <div class="inner">
+        <article class="alt">
+            <div class="content">
+                <ul class="actions">
+                    <li><a href="{{ url_for('combine54') }}" class="button alt" value="" >Save Result</a></li>
+                </ul>
+                <p>Save new dataset combining with the prediction result and result visualization report.</p>
+            </div>
+        </article>
+    </div>
+</section>
+
+{% endblock %}

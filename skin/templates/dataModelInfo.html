@@ -1,0 +1,65 @@
+{% extends "layout1.html" %}
+{% block content %}
+<!-- Banner
+			<section id="banner"  >
+				<div class="inner">
+					<h1>WELCOME TO  <span>BANKRUPTCY PREDICTION SYSTEM<br />
+					everything is easy</span></h1>
+					<ul class="actions">
+						<li><a href="#" class="button alt">Get Started</a></li>
+					</ul>
+				</div>
+			</section>-->
+
+<!-- One-->
+<div class="inner">
+    <br>
+	<header>
+		<h1>Create Your Own Prediction Model</h1>
+	</header>
+</div>
+<section id="one">
+    <div class="container-fluid" style="border:solid">
+        <center>
+            <h1>Your Model Accuracy</h1>
+            <h3>Number Of Attributes Used to Make Prediction: {{numLabels}}</h3>
+            <h3>Number Of Target: {{numTarget}}</h3>
+            <h2>{{trainAcc}}</h2>
+            <h2>{{testAcc}}</h2>
+        </center>
+        <h3>Your Prediction Model Information</h3>
+        <div style="overflow-x: auto;">
+            <h4>Your Data Split Information</h4>
+            <h5>Number transactions X_train dataset: {{xtrain}}</h5>
+            <h5>Number transactions y_train dataset: {{ytrain}}</h5>
+            <h5>Number transactions X_test dataset: {{xtest}}</h5>
+            <h5>Number transactions y_test dataset: {{ytest}}</h5>
+            <br>
+            <h4>Automatically Implement Over-Sampling Method</h4>
+            <h5>{{cntBfr1}}</h5>
+            <h5>{{cntBfr0}}</h5>
+            <h5>{{afteroverX}}</h5>
+            <h5>{{afteroverY}}</h5>
+            <h5>{{afterCnt1}}</h5>
+            <h5>{{afterCnt0}}</h5>
+            <br>
+        </div>
+    </div>
+</section>
+
+<section id="one">
+	<div class="inner">
+		<article class="alt">
+			<div class="content">
+                <h2>Model Ready !</h2>
+                <ul class="actions">
+                    <li><a href="{{ url_for('guidelineOwn') }}" class="button alt" value="" >Proceed To Make Prediction</a></li>
+                </ul>
+				<p>So BPS system had already save your prediction model. You can proceed to make prediction using your own prediction model</p>
+			</div>
+		</article>
+	</div>
+</section>
+
+
+{% endblock %}

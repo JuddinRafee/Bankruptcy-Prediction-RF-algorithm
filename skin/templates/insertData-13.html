@@ -1,0 +1,61 @@
+{% extends "layout1.html" %}
+{% block content %}
+<!-- Banner
+			<section id="banner"  >
+				<div class="inner">
+					<h1>WELCOME TO  <span>BANKRUPTCY PREDICTION SYSTEM<br />
+					everything is easy</span></h1>
+					<ul class="actions">
+						<li><a href="#" class="button alt">Get Started</a></li>
+					</ul>
+				</div>
+			</section>-->
+
+<!-- One-->
+<div class="inner">
+	<header>
+		<h1>Category 4 : 13 attributes</h1>
+	</header>
+</div>
+<section id="one">
+    <div class="container-fluid" style="border:solid">
+        <h5>This Section Will Display Your Data</h5>
+        <div style="overflow-x: auto;">
+            <table class="no-wrap">
+                {{ data | safe }}
+            </table>
+        </div>
+    </div>
+</section>
+
+<section id="two">
+	<div class="inner">
+		<article>
+			<div class="content">
+                <h2>Step 1</h2>
+                <form action="{{ url_for('data13') }}" method="POST" enctype = "multipart/form-data">
+                    <div class="form-group">
+                        <fieldset>
+                            <input type="file" name="upload-file" value="">
+                        </fieldset>
+                        <br>
+                        <input type="submit" value="View Data" class="btn btn-secondary btn-lg btn-block">
+                    </div>
+                </form>
+				<p>Insert your data. Make sure you store your data in .xlxs format.</p>
+			</div>
+		</article>
+		<article class="alt">
+			<div class="content">
+                <h2>Step 2</h2>
+                <ul class="actions">
+                    <li><a href="{{ url_for('predict13') }}" class="button alt" value="" >Proceed To Make Prediction</a></li>
+                </ul>
+				<p>After your already check your data, you can proceed to make prediction.</p>
+			</div>
+		</article>
+	</div>
+</section>
+
+
+{% endblock %}

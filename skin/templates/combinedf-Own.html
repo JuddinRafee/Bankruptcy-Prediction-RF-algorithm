@@ -1,0 +1,63 @@
+{% extends "layout1.html" %}
+{% block content %}
+<!-- Banner
+			<section id="banner"  >
+				<div class="inner">
+					<h1>WELCOME TO  <span>BANKRUPTCY PREDICTION SYSTEM<br />
+					everything is easy</span></h1>
+					<ul class="actions">
+						<li><a href="#" class="button alt">Get Started</a></li>
+					</ul>
+				</div>
+			</section>-->
+
+<!-- One-->
+<div class="inner">
+	<header>
+		<h1>Category Your Own Model Prediction</h1>
+	</header>
+</div>
+<section id="one">
+	<div class="inner">
+		<div class="container-fluid" style="border:solid">
+			<h5>Dataset of your data and bankruptcy prediction result (the result given in the ratio of 0:1)</h5>
+			<h5>0 = Possibility Not Bankrupt</h5>
+			<h5>1 = Possibility Bankrupt</h5>
+			<div style="overflow-x: auto;">
+				<table class="no-wrap">
+					{{ data | safe }}
+				</table>
+			</div>
+		</div>
+		<br>
+		<article class="alt">
+			<div class="content">
+				<ul class="actions">
+					<li><a href="{{ url_for('category') }}" class="button alt" value="" >Change Category</a></li>
+				</ul>
+				<p>Try out other category.</p>
+			</div>
+		</article>
+	</div>
+</section>
+<section id="two">
+	<div class="inner">
+		<article class="alt">
+			<div class="content">
+				<ul class="actions">
+					<li><a href="{{ url_for('downloadResultOwn') }}" class="button alt" value="" >Download Dataset file</a></li>
+				</ul>
+				<p>Your dataset append with the prediction result (CSV).</p>
+			</div>
+		</article>
+		<article class="alt">
+			<div class="content">
+				<ul class="actions">
+					<li><a href="{{ url_for('downloadPDFOwn') }}" class="button alt" value="" >Save Report Visualisation</a></li>
+				</ul>
+				<p>Report for prediction result visualisation (PDF).</p>
+			</div>
+		</article>
+	</div>
+</section>
+{% endblock %}

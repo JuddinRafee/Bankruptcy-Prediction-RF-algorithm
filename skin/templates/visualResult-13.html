@@ -1,0 +1,228 @@
+{% extends "layout1.html" %}
+{% block content %}
+<style>
+	#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)}
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 100px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+.info {
+  background-color: #e7f3fe;
+  border-left: 6px solid #2196F3;
+}
+</style>
+<div class="inner">
+	<header>
+		<h1>Category 4 : 13 attributes</h1>
+	</header>
+</div>
+<section id="one">
+	<div class="inner">
+		<header>
+			<center><h3>Prediction Result Visualization</h3></center>
+		</header>
+	</div>
+</section>
+<section id="two">
+	<div class="inner">
+		<article>
+			<div class="content">
+                <div class="image fit">
+					<img id="myImg" src="static/images/imageNotBnkResult13.png" alt="Possibility for not bankrupt prediction result" />
+				</div>
+				<div class="info">
+					<p><b>Based on the figure above you can analyzed the Possibility Not Bankrupt Prediction Result of the companies.</b></p>
+				</div>
+
+			</div>
+		</article>
+		<article class="alt">
+			<div class="content">
+				<div class="image fit">
+					<img id="myImg1" src="static/images/imageBnkResult13.png" alt="Possibility for bankrupt prediction result" />
+				</div>
+				<div class="info">
+					<p><b>Based on the figure above you can analyzed the Possibility Bankrupt Prediction Result of the companies.</b></p>
+				</div>
+			</div>
+		</article>
+	</div>
+</section>
+<section id="two">
+	<div class="inner">
+		<article class="alt">
+			<div class="content">
+				<div class="image fit">
+					<img id="myImg2" src="static/images/imageResult13.png" alt="Comparison of Bankruptcy Prediction Result in bar chart" />
+				</div>
+				<div class="info">
+					<p><b>Based on the figure above you can analyzed the comparison between bankrupt and not bankrupt prediction result of the companies.</b></p>
+				</div>
+
+			</div>
+		</article>
+		<article class="alt">
+			<div class="content">
+				<div class="image fit">
+					<img id="myImg3" src="static/images/imageLineResult13.png" alt="Comparison of Bankruptcy Prediction Result in line chart" />
+				</div>
+				<div class="info">
+					<p><b>Based on the figure above you can analyzed and detect pattern between Bankrupt and Not Bankrupt prediction result of the companies.</b></p>
+				</div>
+
+			</div>
+		</article>
+	</div>
+</section>
+<section id="two">
+	<div class="inner">
+		<article>
+			<div class="content">
+                <ul class="actions">
+					<li><a href="{{ url_for('insertData13') }}" class="button alt" value="" >Insert New Data</a></li>
+				</ul>
+				<p>If you want to changing others dataset.</p>
+			</div>
+		</article>
+		<article class="alt">
+			<div class="content">
+				<ul class="actions">
+					<li><a href="{{ url_for('insertAttr13') }}" class="button alt" value="" >Proceed To Your Data Visualization</a></li>
+				</ul>
+				<p>There is a variety of data information that is provided for to extract knowledge.</p>
+			</div>
+		</article>
+	</div>
+</section>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+var img = document.getElementById("myImg1");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+var img = document.getElementById("myImg2");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+var img = document.getElementById("myImg3");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+</script>
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "layout1.html" %}
+{% block content %}
+<!-- Banner
+			<section id="banner"  >
+				<div class="inner">
+					<h1>WELCOME TO  <span>BANKRUPTCY PREDICTION SYSTEM<br />
+					everything is easy</span></h1>
+					<ul class="actions">
+						<li><a href="#" class="button alt">Get Started</a></li>
+					</ul>
+				</div>
+			</section>-->
+
+<!-- One-->
+<div class="inner">
+	<header>
+		<h1>Category 4 : 13 attributes</h1>
+	</header>
+</div>
+<section id="one">
+    <div class="container">
+        <header>
+            <h2>Prediction Result</h2>
+        </header>
+        <div class="container-fluid" style="border:solid">
+            <table class="table">
+                <tr>
+                    <th>Company</th>
+                    <th>Possibility Not Bankrupt</th>
+                    <th>Possibility Bankrupt</th>
+                </tr>
+                <tr>
+                    {% for items in result %}
+                    <th scope="col">Prediction Company {{ loop.index0 +1}} :</th>
+                    <td>{{"{:.0%}".format(result[loop.index0][0])}}</td>
+                    <td>{{"{:.0%}".format(result[loop.index0][1])}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <br>
+    </div>
+</section>
+<section id="two">
+	<div class="inner">
+		<article>
+			<div class="content">
+                <ul class="actions">
+					<li><a href="{{ url_for('insertData13') }}" class="button alt" value="" >Insert New Data</a></li>
+				</ul>
+				<p>If you want to changing others dataset.</p>
+			</div>
+		</article>
+		<article class="alt">
+			<div class="content">
+                <ul class="actions">
+                    <li><a href="{{ url_for('plotResult13') }}" class="button alt" value="" >Proceed To Result Visualization</a></li>
+                </ul>
+				<p>Prediction result visualization for more insight about the prediction result</p>
+			</div>
+		</article>
+	</div>
+</section>
+
+{% endblock %}

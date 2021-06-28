@@ -1,0 +1,81 @@
+{% extends "layout1.html" %}
+{% block content %}
+<!-- Banner
+			<section id="banner"  >
+				<div class="inner">
+					<h1>WELCOME TO  <span>BANKRUPTCY PREDICTION SYSTEM<br />
+					everything is easy</span></h1>
+					<ul class="actions">
+						<li><a href="#" class="button alt">Get Started</a></li>
+					</ul>
+				</div>
+			</section>-->
+
+<!-- One-->
+<section id="one">
+	<div class="inner">
+		<header>
+			<h1>Category 2 : 41 attributes</h1>
+		</header>
+		<p>In this category you need to prepare those financial ratios : </p>
+		<div class="row">
+			<div class="column">
+				<ul>
+					<li>ID - Company ID</li>
+					<li>attr1 - total liabilities / total assets</li>
+					<li>attr2 - [(cash + short-term securities + receivables - short-term liabilities) / (operating expenses - depreciation)] * 365</li>
+					<li>attr3 - retained earnings / total assets</li>
+					<li>attr4 - book value of equity / total liabilities</li>
+					<li>attr5 - sales / total assets</li>
+					<li>attr6 - gross profit / short-term liabilities</li>
+					<li>attr7 - (gross profit + depreciation) / sales</li>
+					<li>attr8 - (total liabilities * 365) / (gross profit + depreciation)</li>
+					<li>attr9 - (gross profit + depreciation) / total liabilities</li>
+					<li>attr10 - total assets / total liabilities</li>
+					<li>attr11 - (inventory * 365) / sales</li>
+					<li>attr12 - net profit / sales</li>
+					<li>attr13 - gross profit (in 3 years) / total assets</li>
+					<li>attr14 - (equity - share capital) / total assets</li>
+					<li>attr15 - (net profit + depreciation)</li>
+					<li>attr16 - profit on operating activities / financial expenses</li>
+					<li>attr17 - logarithm of total assets</li>
+					<li>attr18 - (total liabilities - cash) / sales</li>
+					<li>attr19 - (current liabilities * 365) / cost of products sold</li>
+					<li>attr20 - operating expenses / total liabilities</li>
+					<li>attr21 - profit on sales / total assets</li>
+					<li>attr22 - (current assets - inventories) / long-term liabilities </li>
+					<li>attr23 - constant capital / total assets</li>
+					<li>attr24 - profit on sales / sales</li>
+					<li>attr25 - total liabilities / ((profit on operating activities + depreciation) * (12/365))</li>
+					<li>attr26 - profit on operating activities / sales</li>
+					<li>attr27 - net profit / inventory</li>
+					<li>attr28 - (current assets - inventory) / short-term liabilities</li>
+					<li>attr29 - EBITDA (profit on operating activities - depreciation) / total assets</li>
+					<li>attr30 - EBITDA (profit on operating activities - depreciation) / sales</li>
+					<li>attr31 - current assets / total liabilities</li>
+					<li>attr32 - equity / fixed assets</li>
+					<li>attr33 - constant capital / fixed assets</li>
+					<li>attr34 - working capital </li>
+					<li>attr35 - (sales - cost of products sold) / sales</li>
+					<li>attr36 - (current assets - inventory - short-term liabilities) / (sales - gross profit - depreciation)</li>
+					<li>attr37 - total costs /total sales</li>
+					<li>attr38 - long-term liabilities / equity</li>
+					<li>attr39 - sales / receivables</li>
+					<li>attr40 - (short-term liabilities *365) / sales</li>
+					<li>attr41 - sales / short-term liabilities</li>
+				</ul>
+			</div>
+
+		</div>
+		<p>Then put all the data in csv file like this: </p>
+		<div class="image fit">
+			<img src="/static/images/test-multiple-41.PNG" alt="pic" />
+		</div>
+		<ul class="actions">
+			<li><a href="{{ url_for('insertData41')}}" class="button alt">Proceed</a></li>
+		</ul>
+	</div>
+</section>
+
+
+{% endblock %}

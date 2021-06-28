@@ -1,0 +1,156 @@
+{% extends "layout1.html" %}
+{% block content %}
+<!-- Banner
+			<section id="banner"  >
+				<div class="inner">
+					<h1>WELCOME TO  <span>BANKRUPTCY PREDICTION SYSTEM<br />
+					everything is easy</span></h1>
+					<ul class="actions">
+						<li><a href="#" class="button alt">Get Started</a></li>
+					</ul>
+				</div>
+			</section>-->
+
+		<!-- One
+			<section id="one">
+				<div class="inner">
+					<header>
+						<h2>What is BPS ?</h2>
+					</header>
+					<p>BPS is stand for Bankruptcy Prediction System that have ability to predict whether a company or firm is about to bankrupt or not by accessing 61 attributes financial value : </p>
+					<ul class="actions">
+						<li><a href="#" class="button alt">Learn More</a></li>
+					</ul>
+				</div>
+				<section id="two">
+				<div class="inner">
+					<p>RF stand for Random Forest. The random forest is a classification algorithm consisting of many decisions trees. It uses bagging and feature randomness when building each individual tree to try to create an uncorrelated forest of trees whose prediction by committee is more accurate than that of any individual tree.</p>
+					<ul class="actions">
+						<li><a href="#" class="button alt">Learn More</a></li>
+					</ul>
+				</div>
+			</section>-->
+
+		<!-- Two -->
+<div class="inner">
+	<center><h1 class="page-header">Welcome, {{ name }}</h1></center>
+	<header>
+		<h1>Suggested Prediction Category:</h1>
+	</header>
+</div>
+<section id="two">
+	<div class="inner">
+		<article class="alt">
+			<div class="content">
+				<header>
+					<h3>Create your own prediction model</h3>
+				</header>
+				<div class="image fit">
+					<a href="{{ url_for('insertTraindata')}}"><img src="/static/images/img2.jpg" alt="" /></a>
+					<a href="{{ url_for('insertTraindata')}}" class="button alt">Create Model</a>
+				</div>
+				<p>Create Your Own Prediction Model Using Your Own Data Collection.</p>
+			</div>
+		</article>
+		<article class="alt">
+			<div class="content">
+				<header>
+					<h3>Prediction Category 1 : Using 54 financial ratios</h3>
+				</header>
+				<div class="image fit">
+					<a href="{{ url_for('guideline54')}}"><img src="/static/images/img2.jpg" alt="" /></a>
+					<a href="{{ url_for('guideline54')}}" class="button alt">Let's Predict</a>
+				</div>
+				<p>In this category it use 54 financial ratios in order to make prediction of bankruptcy. Please press the button "Let's Predict" to proceed.</p>
+			</div>
+		</article>
+	</div>
+</section>
+<div class="inner">
+	<header>
+		<h1>Others Prediction Category:</h1>
+	</header>
+</div>
+<section id="three">
+	<div class="inner">
+		<article class="alt">
+			<div class="content">
+				<header>
+					<h3>Prediction Category 2 : Using 41 financial ratios</h3>
+				</header>
+				<div class="image fit">
+					<a href="{{ url_for('guideline41')}}"><img src="/static/images/img1.jpg" alt="" /></a>
+					<a href="{{ url_for('guideline41')}}" class="button alt">Let's Predict</a>
+				</div>
+				<p>In this category it use 41 financial ratios in order to make prediction of bankruptcy. Please press the button "Let's Predict" to proceed.</p>
+			</div>
+		</article>
+		<article class="alt">
+			<div class="content">
+				<header>
+					<h3>Prediction Category 3 : Using 36 financial ratios</h3>
+				</header>
+				<div class="image fit">
+					<a href="{{ url_for('guideline36')}}"><img src="/static/images/img1.jpg" alt="" /></a>
+					<a href="{{ url_for('guideline36')}}" class="button alt">Let's Predict</a>
+				</div>
+				<p>In this category it use 36 financial ratios in order to make prediction of bankruptcy. Please press the button "Let's Predict" to proceed.</p>
+			</div>
+		</article><article class="alt">
+		<div class="content">
+			<header>
+				<h3>Prediction Category 4 : Using 13 financial ratios</h3>
+			</header>
+			<div class="image fit">
+				<a href="{{ url_for('guideline13')}}"><img src="/static/images/img1.jpg" alt="" /></a>
+				<a href="{{ url_for('guideline13')}}" class="button alt">Let's Predict</a>
+			</div>
+			<p>In this category it use 13 financial ratios in order to make prediction of bankruptcy. Please press the button "Let's Predict" to proceed.</p>
+		</div>
+	</article>
+
+	</div>
+</section>
+
+		<!-- Three
+			<section id="three">
+				<div class="inner">
+					<article>
+						<div class="content">
+							<span class="icon fa-laptop"></span>
+							<header>
+								<h3>Tempus Feugiat</h3>
+							</header>
+							<p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna lorem ullamcorper laoreet, lectus arcu.</p>
+							<ul class="actions">
+								<li><a href="#" class="button alt">Learn More</a></li>
+							</ul>
+						</div>
+					</article>
+					<article>
+						<div class="content">
+							<span class="icon fa-diamond"></span>
+							<header>
+								<h3>Aliquam Nulla</h3>
+							</header>
+							<p>Ut convallis, sem sit amet interdum consectetuer, odio augue aliquam leo, nec dapibus tortor nibh sed.</p>
+							<ul class="actions">
+								<li><a href="#" class="button alt">Learn More</a></li>
+							</ul>
+						</div>
+					</article>
+					<article>
+					<div class="content">
+							<span class="icon fa-laptop"></span>
+							<header>
+								<h3>Sed Magna</h3>
+							</header>
+							<p>Suspendisse mauris. Fusce accumsan mollis eros. Pellentesque a diam sit amet mi ullamcorper vehicula.</p>
+							<ul class="actions">
+								<li><a href="#" class="button alt">Learn More</a></li>
+							</ul>
+						</div>
+					</article>
+				</div>
+			</section> -->
+{% endblock %}
